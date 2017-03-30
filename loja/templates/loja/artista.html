@@ -1,0 +1,34 @@
+{% extends "../base.html" %}
+
+{% block contents %}
+    <h2>{{ artista.nome }}</h2>
+    <table>
+    	<tr>
+    		<td><a href="/artista/{{artista.id}}/like">Like</a></td>
+    		<td>{{artista.numero_gostei}}</td>
+    	</tr>
+    	<tr>
+    		<td>Biografia</td>
+    		<td>{{artista.biografia}}</td>
+    	</tr>
+    </table>
+
+    <h2>Albuns:</h2>
+    <table>
+    {% for album in artista.album_set.all %}
+    	<tr>
+    		<td>Nome:</td>
+    		<td>{{album.nome}}</td>
+    	</tr>
+    	<tr>
+    		<td>Ano:</td>
+    		<td>{{album.ano}}</td>    		    
+    	</tr>
+    	<tr>
+    		<td>Numero de Musica:</td>
+    		<td>xxxx</td>
+    	</tr>
+    	<tr></tr>
+    {% endfor %}
+    </table>
+{% endblock %}

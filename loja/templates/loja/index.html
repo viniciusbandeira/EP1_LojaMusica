@@ -1,0 +1,9 @@
+{% extends "../base.html" %}
+
+{% block contents %}
+    <table>
+    {% for artista in artistas %}
+    	<tr><a href="/artista/{{artista.id}}">{{artista.nome}}</a></tr>
+    {% endfor %}
+    </table>
+{% endblock %}
